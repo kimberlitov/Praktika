@@ -21,9 +21,9 @@ namespace c_sharp3
             {
                 if (package.Weight > Limit_Weight)
                 {
-                    Console.WriteLine("Лимит посылки превышен, отправка отменяется.");
+                    Console.WriteLine("Р›РёРјРёС‚ РїРѕСЃС‹Р»РєРё РїСЂРµРІС‹С€РµРЅ, РѕС‚РїСЂР°РІРєР° РѕС‚РјРµРЅСЏРµС‚СЃСЏ.");
                 }
-                else Console.WriteLine("Посылка доставляется");
+                else Console.WriteLine("РџРѕСЃС‹Р»РєР° РґРѕСЃС‚Р°РІР»СЏРµС‚СЃСЏ");
             }
             public Sending_service(double limit_Weight)
             {
@@ -32,7 +32,7 @@ namespace c_sharp3
         }
         static void Main(string[] args)
         {
-            Package key_gate = new Package("Ключ для калитки", 0.2);
+            Package key_gate = new Package("РљР»СЋС‡ РґР»СЏ РєР°Р»РёС‚РєРё", 0.2);
             Sending_service service = new Sending_service(10);
             service.Send_a_package(key_gate);
         }

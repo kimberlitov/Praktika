@@ -5,7 +5,7 @@ namespace c_sharp3
         class task_2
         {
             private int n = 0;
-            //след. число
+            //СЃР»РµРґ. С‡РёСЃР»Рѕ
             private int c = 1;
             private bool SetNumber(int number)
             {

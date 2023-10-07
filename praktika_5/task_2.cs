@@ -11,7 +11,7 @@ namespace c_sharp3
         {
             public void SayHello()
             {
-                Console.WriteLine("Привет");
+                Console.WriteLine("РџСЂРёРІРµС‚");
             }
         }
         class English : IHello
@@ -32,7 +32,7 @@ namespace c_sharp3
         {
             public void SayHello()
             {
-                Console.WriteLine("Здраво");
+                Console.WriteLine("Р—РґСЂР°РІРѕ");
             }
         }
         static void Main(string[] args)

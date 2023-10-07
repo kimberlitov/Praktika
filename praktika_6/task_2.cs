@@ -20,12 +20,12 @@ namespace c_sharp3
         {
             public void Bad_music()
             {
-                //Не в обиду, я не фанат
+                //РќРµ РІ РѕР±РёРґСѓ, СЏ РЅРµ С„Р°РЅР°С‚
                 if (Name == "MORGENSHTERN - ARISTOCRAT")
                 {
                     Console.WriteLine("bad music");
                 }
-                else { Console.WriteLine("Хороший вкус"); }
+                else { Console.WriteLine("РҐРѕСЂРѕС€РёР№ РІРєСѓСЃ"); }
             }
         }
         class Plane : Transport_vehicle
@@ -34,11 +34,11 @@ namespace c_sharp3
             {
                 switch (Name)
                 {
-                    case "лето":
-                        Console.WriteLine("Самое то!");
+                    case "Р»РµС‚Рѕ":
+                        Console.WriteLine("РЎР°РјРѕРµ С‚Рѕ!");
                         break;
                     default:
-                        Console.WriteLine("Не благоприятный сезон");
+                        Console.WriteLine("РќРµ Р±Р»Р°РіРѕРїСЂРёСЏС‚РЅС‹Р№ СЃРµР·РѕРЅ");
                         break;
                 }
             }
@@ -49,9 +49,9 @@ namespace c_sharp3
             {
                 if (Max_speed <= 1)
                 {
-                    Console.WriteLine("Бетон не прилипнет к стенкам");
+                    Console.WriteLine("Р‘РµС‚РѕРЅ РЅРµ РїСЂРёР»РёРїРЅРµС‚ Рє СЃС‚РµРЅРєР°Рј");
                 }
-                else { Console.WriteLine("Залипательно"); }
+                else { Console.WriteLine("Р—Р°Р»РёРїР°С‚РµР»СЊРЅРѕ"); }
             }
         }
         static void Main(string[] args)
@@ -60,7 +60,7 @@ namespace c_sharp3
             politeh.Name = "MORGENSHTERN - ARISTOCRAT";
             politeh.Bad_music();
             Plane plane = new Plane();
-            plane.Name = "лето";
+            plane.Name = "Р»РµС‚Рѕ";
             plane.pollinate_the_field();
             Concrete_Mixer concrete_Mixer = new Concrete_Mixer();
             concrete_Mixer.Max_speed = 0.8;

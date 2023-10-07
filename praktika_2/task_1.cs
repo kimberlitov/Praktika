@@ -4,13 +4,13 @@ namespace c_sharp3
     {
         class quadratic_equation
         {
-            //Коэффициэнты
+            //РљРѕСЌС„С„РёС†РёСЌРЅС‚С‹
             private double a;
             private double b;
             private double c;
-            //корень
+            //РєРѕСЂРµРЅСЊ
             private double x;
-            //дискриминант
+            //РґРёСЃРєСЂРёРјРёРЅР°РЅС‚
             private double D;
 
             public double For_a
@@ -67,7 +67,7 @@ namespace c_sharp3
                 discriminant();
                 if (D < 0)
                 {
-                    Console.WriteLine("Корней нет");
+                    Console.WriteLine("РљРѕСЂРЅРµР№ РЅРµС‚");
                 }
                 if (D == 0)
                 {
@@ -85,7 +85,7 @@ namespace c_sharp3
             }
             public quadratic_equation()
             {
-                //не меняет результата 
+                //РЅРµ РјРµРЅСЏРµС‚ СЂРµР·СѓР»СЊС‚Р°С‚Р° 
                 a = 100;
                 b = 100;
                 c = 50;

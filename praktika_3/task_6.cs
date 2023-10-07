@@ -12,18 +12,18 @@ namespace c_sharp3
             {
                 return t.GetHashCode();
             }
-            public double M() //генеральная средняя
+            public double M() //РіРµРЅРµСЂР°Р»СЊРЅР°СЏ СЃСЂРµРґРЅСЏСЏ
             {
 
                 Sql_up();
                 return t.Average();
             }
-            public double D() //исправленная дисперсия
+            public double D() //РёСЃРїСЂР°РІР»РµРЅРЅР°СЏ РґРёСЃРїРµСЂСЃРёСЏ
             {
                 Dispersia = M();
                 return t.Sum(a => (a - Dispersia) * (a - Dispersia)) / (t.Length - 1);
             }
-            public double G() //среднеквадратическое отклонение
+            public double G() //СЃСЂРµРґРЅРµРєРІР°РґСЂР°С‚РёС‡РµСЃРєРѕРµ РѕС‚РєР»РѕРЅРµРЅРёРµ
             {
                 Standard_deviation = D();
                 return Math.Abs(Math.Sqrt(Standard_deviation * Standard_deviation));

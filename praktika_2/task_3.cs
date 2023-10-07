@@ -16,14 +16,14 @@ namespace c_sharp3
             private string Encrypt()
             {
 
-                Console.WriteLine("Ввод:");
+                Console.WriteLine("Р’РІРѕРґ:");
                 s = Console.ReadLine();
                 ascii_elements();
                 for (int i = 0; i < s.Length; i++)
                 {
                     for (int j = 0; j < combined.Length; j++)
                     {
-                        //Поиск необходимой буквы
+                        //РџРѕРёСЃРє РЅРµРѕР±С…РѕРґРёРјРѕР№ Р±СѓРєРІС‹
                         if (s[i] == combined[j])
                         {
                             j = j + 3;
@@ -59,7 +59,7 @@ namespace c_sharp3
             }
             private string Decrypt()
             {
-                Console.WriteLine("Ввод:");
+                Console.WriteLine("Р’РІРѕРґ:");
                 s = Console.ReadLine();
                 ascii_elements();
                 for (int i = 0; i < s.Length; i++)
@@ -101,8 +101,8 @@ namespace c_sharp3
             public string choice_user()
             {
 
-                Console.WriteLine("1.Зашифровать");
-                Console.WriteLine("2.Расшифровать");
+                Console.WriteLine("1.Р—Р°С€РёС„СЂРѕРІР°С‚СЊ");
+                Console.WriteLine("2.Р Р°СЃС€РёС„СЂРѕРІР°С‚СЊ");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -114,7 +114,7 @@ namespace c_sharp3
                         Decrypt();
                         break;
                     default:
-                        Console.WriteLine("Неверный ввод");
+                        Console.WriteLine("РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ");
                         break;
                 }
                 return s;
@@ -123,29 +123,29 @@ namespace c_sharp3
             {
                 for (int i = 65; i < 91; i++)
                 {
-                    //Взятие элементов из таблицы ascii
+                    //Р’Р·СЏС‚РёРµ СЌР»РµРјРµРЅС‚РѕРІ РёР· С‚Р°Р±Р»РёС†С‹ ascii
                     nums_english[g] = (char)i;
                     g++;
                 }
                 for (int i = 97; i < 123; i++)
                 {
-                    //Взятие элементов из таблицы ascii
+                    //Р’Р·СЏС‚РёРµ СЌР»РµРјРµРЅС‚РѕРІ РёР· С‚Р°Р±Р»РёС†С‹ ascii
                     nums_english[g] = (char)i;
                     g++;
                 }
-                char[] alphabet = { 'А', 'Б', 'В', 'Г', 'Д',
-                                    'Е', 'Ё', 'Ж', 'З', 'И',
-                                    'Й', 'К', 'Л', 'М', 'Н',
-                                    'О', 'П', 'Р', 'С', 'Т',
-                                    'У', 'Ф', 'Х', 'Ц', 'Ч',
-                                    'Ш', 'Щ', 'Ъ', 'Ы', 'Ь',
-                                    'Э', 'Ю', 'Я','а', 'б', 'в', 'г', 'д',
-                                    'е', 'ё', 'ж', 'з', 'и',
-                                    'й', 'к', 'л', 'м', 'н',
-                                    'о', 'п', 'р', 'с', 'т',
-                                    'у', 'ф', 'х', 'ц', 'ч',
-                                    'ш', 'щ', 'ъ', 'ы', 'ь',
-                                    'э', 'ю', 'я'};
+                char[] alphabet = { 'Рђ', 'Р‘', 'Р’', 'Р“', 'Р”',
+                                    'Р•', 'РЃ', 'Р–', 'Р—', 'Р',
+                                    'Р™', 'Рљ', 'Р›', 'Рњ', 'Рќ',
+                                    'Рћ', 'Рџ', 'Р ', 'РЎ', 'Рў',
+                                    'РЈ', 'Р¤', 'РҐ', 'Р¦', 'Р§',
+                                    'РЁ', 'Р©', 'РЄ', 'Р«', 'Р¬',
+                                    'Р­', 'Р®', 'РЇ','Р°', 'Р±', 'РІ', 'Рі', 'Рґ',
+                                    'Рµ', 'С‘', 'Р¶', 'Р·', 'Рё',
+                                    'Р№', 'Рє', 'Р»', 'Рј', 'РЅ',
+                                    'Рѕ', 'Рї', 'СЂ', 'СЃ', 'С‚',
+                                    'Сѓ', 'С„', 'С…', 'С†', 'С‡',
+                                    'С€', 'С‰', 'СЉ', 'С‹', 'СЊ',
+                                    'СЌ', 'СЋ', 'СЏ'};
                 combined = nums_english.Concat(alphabet).ToArray();
                 return combined;
             }

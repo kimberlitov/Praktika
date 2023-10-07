@@ -11,35 +11,35 @@ namespace c_sharp3
         {
             public void Voice()
             {
-                Console.WriteLine("Γΰβ!");
+                Console.WriteLine("Π“Π°Π²!");
             }
         }
         class Cat : IAnimal
         {
             public void Voice()
             {
-                Console.WriteLine("Μÿσ!");
+                Console.WriteLine("ΠΡΡƒ!");
             }
         }
         class Cow : IAnimal
         {
             public void Voice()
             {
-                Console.WriteLine("Μσσσσ!");
+                Console.WriteLine("ΠΡƒΡƒΡƒΡƒ!");
             }
         }
         class Fox : IAnimal
         {
             public void Voice()
             {
-                Console.WriteLine("Υευευε!");
+                Console.WriteLine("Π¥ΠµΡ…ΠµΡ…Πµ!");
             }
         }
         class Owl : IAnimal
         {
             public void Voice()
             {
-                Console.WriteLine("Συ!");
+                Console.WriteLine("Π£Ρ…!");
             }
         }
         static void Main(string[] args)

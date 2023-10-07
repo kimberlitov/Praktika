@@ -11,7 +11,7 @@ namespace c_sharp3
         {
             public void Draw(int size)
             {
-                Console.WriteLine("Вертикальная линия");
+                Console.WriteLine("Р’РµСЂС‚РёРєР°Р»СЊРЅР°СЏ Р»РёРЅРёСЏ");
                 for (int i = 0; i < size; i++)
                 {
                     Console.WriteLine("*");
@@ -22,7 +22,7 @@ namespace c_sharp3
         {
             public void Draw(int size)
             {
-                Console.WriteLine("Горизонтальная линия");
+                Console.WriteLine("Р“РѕСЂРёР·РѕРЅС‚Р°Р»СЊРЅР°СЏ Р»РёРЅРёСЏ");
                 for (int i = 0; i < size; i++)
                 {
                     Console.Write("*");
@@ -34,7 +34,7 @@ namespace c_sharp3
             public void Draw(int size)
             {
 
-                Console.WriteLine("\nКвадрат");
+                Console.WriteLine("\nРљРІР°РґСЂР°С‚");
                 for (int i = 0; i < size; i++)
                 {
                     for (int j = 0; j < size; j++)

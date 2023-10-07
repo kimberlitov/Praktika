@@ -15,7 +15,7 @@ namespace c_sharp3
 
             public void Call(string number)
             {
-                Console.WriteLine($"Вызов по номеру{number} ");
+                Console.WriteLine($"Р’С‹Р·РѕРІ РїРѕ РЅРѕРјРµСЂСѓ{number} ");
             }
         }
 
@@ -31,7 +31,7 @@ namespace c_sharp3
             public double CameraResolution { get; set; }
             public void Shoot()
             {
-                Console.WriteLine("Снимок сделан");
+                Console.WriteLine("РЎРЅРёРјРѕРє СЃРґРµР»Р°РЅ");
             }
         }
 

@@ -40,22 +40,22 @@ namespace c_sharp3
                 if (Mana >= spell.Mana)
                 {
                     Mana -= spell.Mana;
-                    Console.WriteLine(Name + " колдует! ");
+                    Console.WriteLine(Name + " РєРѕР»РґСѓРµС‚! ");
                     spell.Use();
                 }
                 else
                 {
-                    Console.WriteLine("Для использования " + spell.Name_cast + " не хватает " + (spell.Mana - Mana) + " единиц маны. Хлебнице зелья!");
+                    Console.WriteLine("Р”Р»СЏ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЏ " + spell.Name_cast + " РЅРµ С…РІР°С‚Р°РµС‚ " + (spell.Mana - Mana) + " РµРґРёРЅРёС† РјР°РЅС‹. РҐР»РµР±РЅРёС†Рµ Р·РµР»СЊСЏ!");
                 }
 
             }
         }
         static void Main(string[] args)
         {
-            Spell alohomora = new Spell("alohomora", 60, "Замок открывается!");
-            Spell vingardiumLeviosa = new Spell("vingardiumLeviosa", 60, "Предмет поднимается в воздух!");
+            Spell alohomora = new Spell("alohomora", 60, "Р—Р°РјРѕРє РѕС‚РєСЂС‹РІР°РµС‚СЃСЏ!");
+            Spell vingardiumLeviosa = new Spell("vingardiumLeviosa", 60, "РџСЂРµРґРјРµС‚ РїРѕРґРЅРёРјР°РµС‚СЃСЏ РІ РІРѕР·РґСѓС…!");
 
-            Magician garryPotter = new Magician("Гарри Поттер", 100);
+            Magician garryPotter = new Magician("Р“Р°СЂСЂРё РџРѕС‚С‚РµСЂ", 100);
 
             garryPotter.CastSpell(vingardiumLeviosa);
             garryPotter.CastSpell(alohomora);
