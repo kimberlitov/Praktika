@@ -11,7 +11,7 @@ namespace c_sharp3
         {
             public string Execute(string textLine)
             {
-                char[] textLine_copy = new char[100];
+                List<char> textLine_copy = new List<char>();
                 char[] numbers = {'А', 'Б', 'В', 'Г', 'Д',
                                     'Е', 'Ё', 'Ж', 'З', 'И',
                                     'Й', 'К', 'Л', 'М', 'Н',
@@ -31,12 +31,13 @@ namespace c_sharp3
                     {
                         if (textLine[i] == numbers[j])
                         {
-                            textLine_copy[i] = numbers[j];
-                        }
 
+                            textLine_copy.Add(numbers[j]);
+                        }
                     }
                 }
-                Console.WriteLine(textLine_copy);
+                textLine_copy.ForEach(Console.Write);
+                Console.WriteLine();
                 return textLine_copy.ToString();
             }
         }
@@ -45,7 +46,7 @@ namespace c_sharp3
         {
             public string Execute(string textLine)
             {
-                char[] textLine_copy = new char[100];
+                List<char> textLine_copy = new List<char>();
                 char[] numbers = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
                 for (int i = 0; i < textLine.Length; i++)
                 {
@@ -53,20 +54,21 @@ namespace c_sharp3
                     {
                         if (textLine[i] == numbers[j])
                         {
-                            textLine_copy[i] = numbers[j];
+                            textLine_copy.Add(numbers[j]);
                         }
                     }
                 }
-                Console.WriteLine(textLine_copy);
+                textLine_copy.ForEach(Console.Write);
+                Console.WriteLine();
                 return textLine_copy.ToString();
             }
         }
         static void Main(string[] args)
         {
             DigitFilter filter = new DigitFilter();
-            filter.Execute("П2");
+            filter.Execute("П22222222");
             LetterFilter letterFilter = new LetterFilter();
-            letterFilter.Execute("П2");
+            letterFilter.Execute("П2222");
         }
     }
 }

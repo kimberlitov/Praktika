@@ -1,4 +1,3 @@
-using System.Text;
 using System.Linq;
 namespace c_sharp3
 {
@@ -6,110 +5,110 @@ namespace c_sharp3
     {
         class task_3
         {
-            private int g = 0;
-            private int g1 = 0;
-            private int i = 0;
-            private string s;
-            private char[] nums_english = new char[52];
-            private char[] nums2_english = new char[118];
-            private char[] combined = new char[85];
+            private int End_of_arr = 0;
+            private int Future_symbol = 0;
+            private int Key = 0;
+            private string Input;
+            List<char> Copy_array = new List<char>();
+            public string Full_alphabet_russian;
             private string Encrypt()
             {
-
                 Console.WriteLine("Ввод:");
-                s = Console.ReadLine();
-                ascii_elements();
-                for (int i = 0; i < s.Length; i++)
+                Input = Console.ReadLine();
+                Elements();
+                for (int i = 0; i < Input.Length; i++)
                 {
-                    for (int j = 0; j < combined.Length; j++)
+                    for (int j = 0; j < Full_alphabet_russian.Length; j++)
                     {
-                        //Поиск необходимой буквы
-                        if (s[i] == combined[j])
+                        if (Input[i] == char.ToUpper(Full_alphabet_russian[j]))
                         {
-                            j = j + 3;
-                            g1 = (combined.Length + j) % combined.Length;
-                            if (j >= combined.Length || g1 >= (combined.Length / 2))
+                            Future_symbol = j + Key;
+                            //проверка на конец массива
+                            if (Future_symbol >= Full_alphabet_russian.Length)
                             {
-                                g1 = ((combined.Length / 2) + j) % (combined.Length / 2);
-                                g = (combined.Length + j) % combined.Length;
-                                if (Char.IsLower(s[i]))
-                                {
-                                    nums2_english[i] = Char.ToLowerInvariant(combined[g]);
-                                    Console.Write(nums2_english[i]);
-                                    break;
-                                }
-                                nums2_english[i] = combined[g1];
-                                Console.Write(nums2_english[i]);
-                                break;
+                                End_of_arr = Future_symbol - Full_alphabet_russian.Length;
+                                Copy_array.Add(char.ToUpper(Full_alphabet_russian[End_of_arr]));
                             }
-
-                            nums2_english[i] = combined[j];
-                            Console.Write(nums2_english[i]);
-                            break;
+                            else
+                                Copy_array.Add(char.ToUpper(Full_alphabet_russian[Future_symbol]));
                         }
-                        if (j == combined.Length - 1)
+                        if (Input[i] == char.ToLower(Full_alphabet_russian[j]))
                         {
-                            nums2_english[i] = s[i];
-                            Console.Write(nums2_english[i]);
+                            Future_symbol = j + Key;
+                            //проверка на конец массива
+                            if (Future_symbol >= Full_alphabet_russian.Length)
+                            {
+                                End_of_arr = Future_symbol - Full_alphabet_russian.Length;
+                                Copy_array.Add(char.ToLower(Full_alphabet_russian[End_of_arr]));
+                            }
+                            else
+                                Copy_array.Add(char.ToLower(Full_alphabet_russian[Future_symbol]));
                         }
                     }
-
+                    //проверка на существование символа в массива(например !)                   
+                    if (i != (Copy_array.Count - 1))
+                    {
+                        Copy_array.Add(Input[i]);
+                    }
                 }
-                return s;
+                Copy_array.ForEach(Console.Write);
+                return Input;
             }
             private string Decrypt()
             {
                 Console.WriteLine("Ввод:");
-                s = Console.ReadLine();
-                ascii_elements();
-                for (int i = 0; i < s.Length; i++)
+                Input = Console.ReadLine();
+                Elements();
+                for (int i = 0; i < Input.Length; i++)
                 {
-                    for (int j = 0; j < combined.Length; j++)
+                    for (int j = 0; j < Full_alphabet_russian.Length; j++)
                     {
-                        if (s[i] == combined[j])
+                        if (Input[i] == char.ToUpper(Full_alphabet_russian[j]))
                         {
-                            j = j - 3;
-                            g1 = (combined.Length + j) % combined.Length;
-                            if (j <= combined.Length || g1 <= (combined.Length / 2))
+                            Future_symbol = j - Key;
+                            //проверка на начало массива
+                            if (Future_symbol < 0)
                             {
-                                g1 = ((combined.Length / 2) + j) % (combined.Length / 2);
-                                g = (combined.Length + j) % combined.Length;
-                                if (Char.IsLower(s[i]))
-                                {
-                                    nums2_english[i] = Char.ToLowerInvariant(combined[g]);
-                                    Console.Write(nums2_english[i]);
-                                    break;
-                                }
-                                nums2_english[i] = combined[g1];
-                                Console.Write(nums2_english[i]);
-                                break;
+                                End_of_arr = Future_symbol + Full_alphabet_russian.Length;
+                                Copy_array.Add(char.ToUpper(Full_alphabet_russian[End_of_arr]));
                             }
-                            nums2_english[i] = combined[j];
-                            Console.Write(nums2_english[i]);
-                            break;
+                            else
+                                Copy_array.Add(char.ToUpper(Full_alphabet_russian[Future_symbol]));
                         }
-                        if (j == combined.Length - 1)
+                        if (Input[i] == char.ToLower(Full_alphabet_russian[j]))
                         {
-                            nums2_english[i] = s[i];
-                            Console.Write(nums2_english[i]);
+                            Future_symbol = j - Key;
+                            //проверка на начало массива
+                            if (Future_symbol < 0)
+                            {
+                                End_of_arr = Future_symbol + Full_alphabet_russian.Length;
+                                Copy_array.Add(char.ToLower(Full_alphabet_russian[End_of_arr]));
+                            }
+                            else
+                                Copy_array.Add(char.ToLower(Full_alphabet_russian[Future_symbol]));
                         }
-
+                    }
+                    //проверка на существование символа в массива(например !)
+                    if (i != (Copy_array.Count - 1))
+                    {
+                        Copy_array.Add(Input[i]);
                     }
                 }
-                return s;
+                Copy_array.ForEach(Console.Write);
+                return Input;
             }
             public string choice_user()
             {
-
                 Console.WriteLine("1.Зашифровать");
                 Console.WriteLine("2.Расшифровать");
                 int choice = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Введите ключ:");
+                Key = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
                     case 1:
                         Encrypt();
                         break;
-
                     case 2:
                         Decrypt();
                         break;
@@ -117,37 +116,12 @@ namespace c_sharp3
                         Console.WriteLine("Неверный ввод");
                         break;
                 }
-                return s;
+                return Input;
             }
-            private char[] ascii_elements()
+            private void Elements()
             {
-                for (int i = 65; i < 91; i++)
-                {
-                    //Взятие элементов из таблицы ascii
-                    nums_english[g] = (char)i;
-                    g++;
-                }
-                for (int i = 97; i < 123; i++)
-                {
-                    //Взятие элементов из таблицы ascii
-                    nums_english[g] = (char)i;
-                    g++;
-                }
-                char[] alphabet = { 'А', 'Б', 'В', 'Г', 'Д',
-                                    'Е', 'Ё', 'Ж', 'З', 'И',
-                                    'Й', 'К', 'Л', 'М', 'Н',
-                                    'О', 'П', 'Р', 'С', 'Т',
-                                    'У', 'Ф', 'Х', 'Ц', 'Ч',
-                                    'Ш', 'Щ', 'Ъ', 'Ы', 'Ь',
-                                    'Э', 'Ю', 'Я','а', 'б', 'в', 'г', 'д',
-                                    'е', 'ё', 'ж', 'з', 'и',
-                                    'й', 'к', 'л', 'м', 'н',
-                                    'о', 'п', 'р', 'с', 'т',
-                                    'у', 'ф', 'х', 'ц', 'ч',
-                                    'ш', 'щ', 'ъ', 'ы', 'ь',
-                                    'э', 'ю', 'я'};
-                combined = nums_english.Concat(alphabet).ToArray();
-                return combined;
+                //Добавление русских букв
+                Full_alphabet_russian = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
             }
         }
 
